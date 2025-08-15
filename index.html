@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome Shop Channel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <h1>Welcome Shop Channel</h1>
+    <img id="rotating-img" src="img/ring.png" alt="Rotating Image" />
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h1 class="title">Welcome Shop Channel</h1>
+	<section class="featured">
+	  <h2>The Welcome Shop Channel is not open yet.</h2>
+	</section>
+	<section class="news">
+	  <h2>Important Info:</h2>
+	  <p><i>There is no news yet.</i></p>
+	</section>
+	<a href="#" class="startshop">Start Shopping!</a>
+  </main>
+  
+  <audio id="loading-sound" src="snd/loading.mp3" preload="auto" loop></audio>
+  <audio id="bg-music" src="snd/bgm.mp3" preload="auto" loop></audio>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const loadingScreen = document.getElementById("loading-screen");
+        loadingScreen.classList.add("hidden");
+        setTimeout(() => {
+          loadingScreen.remove();
+        }, 500);
+      }, 5000);
+    });
+	
+  function tryPlay(audio) {
+    audio.play().catch(() => {
+      document.addEventListener('click', () => {
+        audio.play();
+      }, { once: true });
+    });
+  }
+
+  window.addEventListener("load", () => {
+    const loadingSound = document.getElementById("loading-sound");
+    const bgMusic = document.getElementById("bg-music");
+
+    tryPlay(loadingSound);
+
+    setTimeout(() => {
+      const loadingScreen = document.getElementById("loading-screen");
+
+      loadingScreen.classList.add("hidden");
+
+      setTimeout(() => {
+        loadingScreen.remove();
+        loadingSound.pause();
+        loadingSound.currentTime = 0;
+
+        tryPlay(bgMusic); 
+      }, 500);
+    }, 5000); // 
+  });
+  </script>
+
+</body>
+</html>

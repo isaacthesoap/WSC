@@ -1,0 +1,121 @@
+/* Loading screen styling */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    #loading-screen h1 {
+      margin-top: 60px;
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 5em;
+      color: #222;
+    }
+
+    #rotating-img {
+      margin-bottom: 60px;
+      width: 200px;
+      height: 200px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    #loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", sans-serif;
+	  text-align: center;
+	  height: 100vh;
+    }
+	
+	h1 {
+	  color: #0366fc;
+	}
+	
+	.featured {
+	  margin: 1rem;
+	  padding: 3rem;
+	}
+	
+	.news {
+		border: 2px solid #036ffc;
+		border-radius: 8px;
+		overflow: hidden;
+		max-width: 600px;
+		margin: 2rem auto;
+		background-color: #f9f9f9;
+		font-family: "Comic Sans MS", sans-serif;
+		padding: 0;
+		height: calc(2.5rem * 5 + 3rem + 2rem);
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.news h2 {
+		margin: 0;
+		padding: 0.75rem 1rem;
+		background-color: #036ffc;
+		color: white;
+		font-size: 1.25rem;
+		border-bottom: 2px solid #036ffc;
+		height: 3rem;
+		line-height: 1.5rem;
+	}
+
+	.news p {
+		padding: 0.5rem 1rem;
+		color: #666;
+		font-style: italic;
+		margin: 0;
+		height: 2rem;
+	}
+
+	.news a {
+		display: block;
+		padding: 0.5rem 1rem;
+		color: #0077cc;
+		text-decoration: none;
+		border-top: 1px solid #ddd;
+		transition: background-color 0.2s ease, color 0.2s ease;
+		height: 2rem;
+		line-height: 2.5rem;
+		font-size: 1.25rem;
+		text-align: left;
+	}
+
+	.news a:hover {
+		background-color: #eef6ff;
+		color: #0055aa;
+	}
+
+	.startshop {
+		margin: 2rem auto;
+		padding: 1rem 8rem;
+		border: 2px solid #036ffc;
+		max-width: 600px;
+		border-radius: 8px;
+		font-size: 1.5rem;
+		text-decoration: none;
+	}
+
+	.startshop:visited {
+		color: #036ffc;
+	}
